@@ -11,17 +11,17 @@ class RiskScoringService {
         $score = count($breaches) * 10;
 
         foreach ($breaches as $breach) {
-
-            if (isset($breach['DataClasses']) && 
-                in_array("Passwords", $breach['DataClasses'])) {
+            // Handle both PascalCase (raw HIBP) and snake_case (normalized)
+            $dataClasses = $breach['DataClasses'] ?? $breach['data_classes'] ?? [];
+            if (in_array("Passwords", $dataClasses)) {
                 $score += 20;
             }
 
-            if (!empty($breach['IsSensitive'])) {
+            if (!empty($breach['IsSensitive']) || !empty($breach['is_sensitive'])) {
                 $score += 30;
             }
 
-            if (!empty($breach['IsStealerLog'])) {
+            if (!empty($breach['IsStealerLog']) || !empty($breach['is_stealer_log'])) {
                 $score += 25;
             }
         }
