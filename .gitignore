@@ -1,0 +1,24 @@
+# Sensitive config — NEVER commit
+config/api_keys.php
+config/database.php
+api/config.php
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python worker
+worker/venv/
+__pycache__/
+*.pyc
+
+# Claude
+.claude/
+
+# Exports
+exports/*.pdf

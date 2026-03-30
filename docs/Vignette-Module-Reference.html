@@ -1,0 +1,742 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta charset="utf-8">
+<title>Vignette — Module Reference Guide</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom></w:WordDocument></xml><![endif]-->
+<style>
+    @page { size: A4; margin: 2.5cm; }
+    body { font-family: 'Segoe UI', Calibri, Arial, sans-serif; font-size: 11pt; line-height: 1.6; color: #1a1a2e; }
+    h1 { font-size: 24pt; color: #0891b2; border-bottom: 3px solid #0891b2; padding-bottom: 8px; margin-top: 40px; }
+    h2 { font-size: 16pt; color: #0891b2; margin-top: 30px; border-bottom: 1px solid #d1d5db; padding-bottom: 6px; }
+    h3 { font-size: 13pt; color: #1a1a2e; margin-top: 20px; }
+    h4 { font-size: 11pt; color: #4b5563; margin-top: 14px; font-style: italic; }
+    p { margin: 6px 0; }
+    table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+    th { background: #0891b2; color: white; padding: 8px 12px; text-align: left; font-size: 10pt; }
+    td { border: 1px solid #d1d5db; padding: 6px 12px; font-size: 10pt; vertical-align: top; }
+    tr:nth-child(even) td { background: #f8f9fa; }
+    code { font-family: 'Cascadia Code', 'Consolas', monospace; background: #f0f2f5; padding: 1px 4px; font-size: 9.5pt; border-radius: 3px; }
+    .badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 9pt; font-weight: bold; }
+    .badge-green { background: #dcfce7; color: #166534; }
+    .badge-yellow { background: #fef9c3; color: #854d0e; }
+    .badge-red { background: #fee2e2; color: #991b1b; }
+    .badge-blue { background: #dbeafe; color: #1e40af; }
+    .badge-gray { background: #f3f4f6; color: #374151; }
+    .example-box { background: #f8f9fa; border: 1px solid #e5e7eb; border-left: 4px solid #0891b2; padding: 12px 16px; margin: 12px 0; font-size: 10pt; }
+    .example-label { font-weight: bold; color: #0891b2; font-size: 9pt; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+    .risk-score { font-size: 14pt; font-weight: bold; }
+    .cover-title { font-size: 36pt; color: #0891b2; margin-top: 120px; text-align: center; }
+    .cover-subtitle { font-size: 16pt; color: #4b5563; text-align: center; margin-top: 10px; }
+    .cover-date { font-size: 12pt; color: #9ca3af; text-align: center; margin-top: 40px; }
+    .toc a { text-decoration: none; color: #0891b2; }
+    .page-break { page-break-before: always; }
+    ul { margin: 6px 0 6px 20px; }
+    li { margin: 3px 0; }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div style="text-align:center; margin-top:150px;">
+    <div style="font-size:48pt; color:#0891b2; font-weight:700; letter-spacing:3px;">VIGNETTE</div>
+    <div style="font-size:14pt; color:#6b7280; letter-spacing:6px; margin-top:8px;">AI-POWERED DIGITAL INTELLIGENCE</div>
+    <div style="width:80px; height:3px; background:#0891b2; margin:30px auto;"></div>
+    <div style="font-size:20pt; color:#1a1a2e; margin-top:20px;">Module Reference Guide</div>
+    <div style="font-size:12pt; color:#6b7280; margin-top:10px;">Detailed capabilities, data fields, and example outputs for every module</div>
+    <div style="font-size:11pt; color:#9ca3af; margin-top:60px;">Version 2.0 &mdash; Phase 5<br>March 2026</div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="page-break"></div>
+<h1>Table of Contents</h1>
+<div class="toc" style="font-size:11pt; line-height:2;">
+<p><a href="#overview">1. Platform Overview</a></p>
+<p><a href="#hibp">2. HaveIBeenPwned Module</a> &mdash; Data Breach Intelligence</p>
+<p><a href="#github">3. GitHub Module</a> &mdash; Developer Profile Intelligence</p>
+<p><a href="#gravatar">4. Gravatar Module</a> &mdash; Email-to-Identity Resolution</p>
+<p><a href="#serpapi">5. SerpAPI Module</a> &mdash; Web Mentions &amp; Social Discovery</p>
+<p><a href="#username">6. Username OSINT Module</a> &mdash; 28-Platform Social Scanner</p>
+<p><a href="#whois">7. WHOIS Module</a> &mdash; Domain Registration Intelligence</p>
+<p><a href="#dns">8. DNS Module</a> &mdash; DNS Records &amp; Email Security</p>
+<p><a href="#ssl">9. SSL Module</a> &mdash; Certificate Intelligence</p>
+<p><a href="#virustotal">10. VirusTotal Module</a> &mdash; Threat Intelligence</p>
+<p><a href="#ipinfo">11. IPInfo Module</a> &mdash; IP Geolocation &amp; Privacy Detection</p>
+<p><a href="#phone">12. Phone Info Module</a> &mdash; Phone Number Intelligence</p>
+<p><a href="#gemini">13. Gemini AI Module</a> &mdash; AI Intelligence Briefing</p>
+<p><a href="#risk">14. Risk Scoring Engine</a></p>
+<p><a href="#bulk">15. Bulk Search</a></p>
+<p><a href="#analytics">16. Dashboard Analytics</a></p>
+</div>
+
+<!-- OVERVIEW -->
+<div class="page-break"></div>
+<h1 id="overview">1. Platform Overview</h1>
+
+<p>Vignette searches across 12 data source modules simultaneously, checks 28 social media platforms, and uses AI to generate unified intelligence profiles. Every search produces:</p>
+
+<ul>
+<li><strong>Unified Identity Profile</strong> &mdash; Name, avatar, bio, location, company merged from multiple sources</li>
+<li><strong>Social Media Footprint</strong> &mdash; Discovered profiles across 28 platforms with web verification</li>
+<li><strong>Risk Score (0-100)</strong> &mdash; Automated threat assessment based on breaches, security posture, and threat indicators</li>
+<li><strong>AI Intelligence Briefing</strong> &mdash; Natural language summary of all findings</li>
+<li><strong>Intelligence Timeline</strong> &mdash; Chronological events from all data sources</li>
+<li><strong>Relationship Map</strong> &mdash; Connections to previously searched entities</li>
+</ul>
+
+<h3>Search Types Supported</h3>
+<table>
+<tr><th>Type</th><th>Example Input</th><th>Modules Triggered</th></tr>
+<tr><td>Email</td><td><code>john@example.com</code></td><td>HIBP, GitHub, Gravatar, SerpAPI (Google Search)</td></tr>
+<tr><td>Username</td><td><code>johndoe123</code></td><td>GitHub, Username OSINT (28 platforms), SerpAPI</td></tr>
+<tr><td>Full Name</td><td><code>John Doe</code></td><td>GitHub (name search), Username OSINT (5 variants), SerpAPI</td></tr>
+<tr><td>IP Address</td><td><code>8.8.8.8</code></td><td>IPInfo, VirusTotal</td></tr>
+<tr><td>Domain</td><td><code>example.com</code></td><td>WHOIS, DNS, SSL, VirusTotal, SerpAPI, IPInfo</td></tr>
+<tr><td>Phone</td><td><code>+91-9876543210</code></td><td>Phone Info, SerpAPI</td></tr>
+</table>
+
+<!-- MODULE 1: HIBP -->
+<div class="page-break"></div>
+<h1 id="hibp">2. HaveIBeenPwned Module</h1>
+<p><span class="badge badge-red">Security</span> <span class="badge badge-gray">File: modules/hibp.php</span></p>
+
+<h3>Purpose</h3>
+<p>Checks if an email address has been exposed in known data breaches. Uses the HaveIBeenPwned API v3 maintained by security researcher Troy Hunt.</p>
+
+<h3>What It Detects</h3>
+<ul>
+<li>Which data breaches contained the email address</li>
+<li>What types of data were exposed (passwords, addresses, phone numbers, IP addresses, etc.)</li>
+<li>Whether the breach was "sensitive" (adult sites, health data, dating platforms)</li>
+<li>Whether credentials were harvested by malware (stealer logs)</li>
+<li>The date each breach occurred</li>
+<li>Total number of accounts affected in each breach</li>
+</ul>
+
+<h3>Data Fields Returned</h3>
+<table>
+<tr><th>Field</th><th>Description</th><th>Example</th></tr>
+<tr><td>Name</td><td>Breach name</td><td>LinkedIn, Adobe, Dropbox</td></tr>
+<tr><td>BreachDate</td><td>When the breach occurred</td><td>2012-05-05</td></tr>
+<tr><td>PwnCount</td><td>Number of accounts in breach</td><td>164,611,595</td></tr>
+<tr><td>DataClasses</td><td>Types of data exposed</td><td>Email addresses, Passwords, Usernames</td></tr>
+<tr><td>IsSensitive</td><td>Whether the breach is from a sensitive source</td><td>true/false</td></tr>
+<tr><td>IsVerified</td><td>Whether HIBP verified the breach is legitimate</td><td>true/false</td></tr>
+<tr><td>LogoPath</td><td>URL to the breached service's logo</td><td>https://haveibeenpwned.com/Content/Images/...</td></tr>
+<tr><td>Description</td><td>HTML description of how the breach occurred</td><td>"In May 2016, LinkedIn had 164 million..."</td></tr>
+</table>
+
+<div class="example-box">
+<div class="example-label">Example Output &mdash; Email: user@example.com</div>
+<p><strong>3 breaches found:</strong></p>
+<p><strong>1. LinkedIn</strong> (May 2012) &mdash; 164M accounts<br>
+Data exposed: Email addresses, Passwords<br>
+<span class="badge badge-red">Password Exposed</span></p>
+<p><strong>2. Adobe</strong> (October 2013) &mdash; 153M accounts<br>
+Data exposed: Email addresses, Password hints, Usernames<br>
+<span class="badge badge-red">Password Exposed</span></p>
+<p><strong>3. Dropbox</strong> (Mid 2012) &mdash; 68M accounts<br>
+Data exposed: Email addresses, Passwords<br>
+<span class="badge badge-red">Password Exposed</span></p>
+<p><strong>Risk Impact:</strong> +10 per breach, +20 per password exposure = <span class="risk-score" style="color:#ef4444;">90/100</span></p>
+</div>
+
+<h3>Trigger Conditions</h3>
+<p>Activated for <strong>email</strong> query type only.</p>
+
+<!-- MODULE 2: GITHUB -->
+<div class="page-break"></div>
+<h1 id="github">3. GitHub Module</h1>
+<p><span class="badge badge-blue">Identity</span> <span class="badge badge-gray">File: modules/github.php</span></p>
+
+<h3>Purpose</h3>
+<p>Discovers developer profiles, repositories, and activity from GitHub. Supports lookup by username (direct) and by email (reverse search via GitHub's user search API).</p>
+
+<h3>What It Discovers</h3>
+<ul>
+<li>Full profile: display name, bio, avatar, location, company, website</li>
+<li>Public repository list with stars, forks, language, and descriptions</li>
+<li>Follower/following counts</li>
+<li>Account creation date</li>
+<li>Public email and associated usernames</li>
+</ul>
+
+<h3>Data Fields Returned</h3>
+<table>
+<tr><th>Field</th><th>Description</th><th>Example</th></tr>
+<tr><td>display_name</td><td>Full name from profile</td><td>John Doe</td></tr>
+<tr><td>username</td><td>GitHub username</td><td>johndoe</td></tr>
+<tr><td>avatar_url</td><td>Profile photo URL</td><td>https://avatars.githubusercontent.com/u/...</td></tr>
+<tr><td>bio</td><td>Profile biography</td><td>"Full-stack developer. Open source enthusiast."</td></tr>
+<tr><td>location</td><td>Location from profile</td><td>San Francisco, CA</td></tr>
+<tr><td>company</td><td>Company/organization</td><td>@google</td></tr>
+<tr><td>email</td><td>Public email</td><td>john@example.com</td></tr>
+<tr><td>public_repos</td><td>Number of public repositories</td><td>42</td></tr>
+<tr><td>followers</td><td>Follower count</td><td>1,250</td></tr>
+<tr><td>following</td><td>Following count</td><td>89</td></tr>
+<tr><td>created_at</td><td>Account creation date</td><td>2015-03-14T12:00:00Z</td></tr>
+<tr><td>profile_url</td><td>GitHub profile URL</td><td>https://github.com/johndoe</td></tr>
+<tr><td>repos</td><td>Top repositories with metadata</td><td>[{name, stars, forks, language, description}, ...]</td></tr>
+</table>
+
+<div class="example-box">
+<div class="example-label">Example Output &mdash; Email: mark@evenforce.com</div>
+<p><strong>GitHub Profile Found</strong></p>
+<p>Name: Mark Isidore Nicholas Alexander<br>
+Username: markisidore<br>
+Location: Bengaluru, India<br>
+Company: Evenforce Technologies Pvt Ltd<br>
+Public Repos: 12 | Followers: 45 | Following: 30<br>
+Account Created: March 2020<br>
+Top Repos: vignette (PHP, 2 stars), portfolio-site (HTML, 1 star)</p>
+</div>
+
+<h3>Trigger Conditions</h3>
+<p>Activated for <strong>email</strong>, <strong>username</strong>, and <strong>name</strong> query types.</p>
+<p>For name searches, GitHub's user search API is used (<code>/search/users?q=name+in:name</code>), returning the top 5 matches.</p>
+
+<!-- MODULE 3: GRAVATAR -->
+<div class="page-break"></div>
+<h1 id="gravatar">4. Gravatar Module</h1>
+<p><span class="badge badge-blue">Identity</span> <span class="badge badge-gray">File: modules/gravatar.php</span></p>
+
+<h3>Purpose</h3>
+<p>Resolves an email address to a Gravatar profile using MD5 hash lookup. Gravatar profiles are public and often contain profile photos, names, bios, and links to social accounts that the user has voluntarily connected.</p>
+
+<h3>What It Discovers</h3>
+<ul>
+<li>Profile photo (avatar) associated with the email</li>
+<li>Display name and bio/about text</li>
+<li>Location</li>
+<li>Connected social media accounts (user-linked)</li>
+<li>Additional email addresses listed on the profile</li>
+<li>Verified accounts on other platforms</li>
+</ul>
+
+<h3>Data Fields Returned</h3>
+<table>
+<tr><th>Field</th><th>Description</th><th>Example</th></tr>
+<tr><td>display_name</td><td>Name from Gravatar profile</td><td>John Doe</td></tr>
+<tr><td>avatar_url</td><td>Profile image URL</td><td>https://gravatar.com/avatar/abc123...</td></tr>
+<tr><td>bio</td><td>About me text</td><td>"Software engineer and coffee enthusiast"</td></tr>
+<tr><td>location</td><td>Location</td><td>London, UK</td></tr>
+<tr><td>profile_url</td><td>Public Gravatar profile link</td><td>https://gravatar.com/johndoe</td></tr>
+<tr><td>social_links</td><td>Connected social accounts</td><td>[{name: "Twitter", url: "https://twitter.com/johndoe"}, ...]</td></tr>
+<tr><td>emails</td><td>Additional email addresses</td><td>["work@company.com", "personal@gmail.com"]</td></tr>
+</table>
+
+<div class="example-box">
+<div class="example-label">Example Output &mdash; Email: user@wordpress.com</div>
+<p>Avatar: (profile photo retrieved)<br>
+Name: Jane Smith<br>
+Bio: "WordPress developer and designer"<br>
+Location: Toronto, Canada<br>
+Social Links: Twitter (@janesmith), WordPress (janesmith.wordpress.com), GitHub (github.com/janesmith)<br>
+Emails: jane.smith@gmail.com</p>
+</div>
+
+<h3>Trigger Conditions</h3>
+<p>Activated for <strong>email</strong> query type only. Uses MD5 hash of the lowercased email &mdash; no API key required.</p>
+
+<!-- MODULE 4: SERPAPI -->
+<div class="page-break"></div>
+<h1 id="serpapi">5. SerpAPI Module (Google Search)</h1>
+<p><span class="badge badge-green">Discovery</span> <span class="badge badge-gray">File: modules/serpapi.php</span></p>
+
+<h3>Purpose</h3>
+<p>Searches Google for any public web pages that mention the target. Returns real Google search results as structured data via SerpAPI. This is one of the most powerful modules because it discovers information that no single API provides &mdash; news articles, forum posts, social media profiles, professional listings, and more.</p>
+
+<h3>What It Discovers</h3>
+<ul>
+<li>Public web pages mentioning the target (LinkedIn profiles, social media, news articles, blog posts)</li>
+<li>Social media profiles that Google has indexed (often more accurate than username guessing)</li>
+<li>Professional listings (company pages, directory entries)</li>
+<li>Academic papers and publications</li>
+<li>Forum posts and community contributions</li>
+<li>Domain mentions and backlinks</li>
+</ul>
+
+<h3>Smart Social Extraction</h3>
+<p>The aggregator automatically extracts social media profiles from Google results using URL pattern matching. When Google returns a result like <code>https://www.instagram.com/beastboy_m.i.n.a/</code>, Vignette extracts the username and platform, marks it as <span class="badge badge-green">Web Verified</span>, and prioritizes it over username-guessed profiles.</p>
+
+<p>Platforms extracted from Google results:</p>
+<table>
+<tr><td>Instagram</td><td>Twitter/X</td><td>Facebook</td><td>LinkedIn</td></tr>
+<tr><td>YouTube</td><td>TikTok</td><td>Pinterest</td><td>Reddit</td></tr>
+<tr><td>Threads</td><td>Snapchat</td><td>Kaggle</td><td>&nbsp;</td></tr>
+</table>
+
+<h3>Data Fields Returned</h3>
+<table>
+<tr><th>Field</th><th>Description</th><th>Example</th></tr>
+<tr><td>query</td><td>The search query used</td><td>"mark isidore nicholas alexander"</td></tr>
+<tr><td>total_results</td><td>Total Google results found</td><td>143</td></tr>
+<tr><td>search_time</td><td>Google search duration</td><td>0.27 seconds</td></tr>
+<tr><td>results[].title</td><td>Page title</td><td>Mark Isidore Nicholas Alexander - LinkedIn</td></tr>
+<tr><td>results[].url</td><td>Full URL</td><td>https://in.linkedin.com/in/markisidore</td></tr>
+<tr><td>results[].snippet</td><td>Page excerpt</td><td>"Senior Software Developer with 3+ years..."</td></tr>
+<tr><td>results[].display_url</td><td>Formatted URL</td><td>in.linkedin.com > markisidore</td></tr>
+<tr><td>results[].site_name</td><td>Domain</td><td>in.linkedin.com</td></tr>
+</table>
+
+<div class="example-box">
+<div class="example-label">Example Output &mdash; Name: "Mark Isidore Nicholas Alexander"</div>
+<p><strong>143 results found</strong> (0.27s)</p>
+<p>1. <strong>Mark Isidore Nicholas Alexander (@beastboy_m.i.n.a)</strong> &mdash; instagram.com<br>
+<em>750+ followers. Walking through life, one step at a time...</em></p>
+<p>2. <strong>Mark Isidore Nicholas Alexander - Evenforce Technologies</strong> &mdash; linkedin.com<br>
+<em>Senior Software Developer. 1.2K+ followers. Bengaluru, Karnataka, India.</em></p>
+<p>3. <strong>Mark Isidore Nicholas Alexander</strong> &mdash; youtube.com<br>
+<em>2 videos. @markisidorenicholasalexand4240</em></p>
+<p>4. <strong>Classification of Life Stages of Malaria Parasite</strong> &mdash; ijircce.com<br>
+<em>P.G. Student, Dept. of Computer Science, St Joseph's College, Bangalore</em></p>
+<p><strong>Social profiles extracted:</strong> Instagram (@beastboy_m.i.n.a) <span class="badge badge-green">Web Verified</span>, LinkedIn (markisidore) <span class="badge badge-green">Web Verified</span>, YouTube <span class="badge badge-green">Web Verified</span></p>
+</div>
+
+<h3>Query Formatting by Type</h3>
+<table>
+<tr><th>Query Type</th><th>Google Query Format</th><th>Example</th></tr>
+<tr><td>Email</td><td>Direct email</td><td><code>user@example.com</code></td></tr>
+<tr><td>Username</td><td>Quoted</td><td><code>"johndoe123"</code></td></tr>
+<tr><td>Name</td><td>Quoted full name</td><td><code>"John Doe"</code></td></tr>
+<tr><td>Domain</td><td>Site operator + quoted</td><td><code>site:example.com OR "example.com"</code></td></tr>
+<tr><td>Phone</td><td>Quoted</td><td><code>"+91-9876543210"</code></td></tr>
+</table>
+
+<h3>Trigger Conditions</h3>
+<p>Activated for <strong>email</strong>, <strong>username</strong>, <strong>name</strong>, <strong>domain</strong>, and <strong>phone</strong> query types. Not used for IP queries.</p>
+
+<!-- MODULE 5: USERNAME OSINT -->
+<div class="page-break"></div>
+<h1 id="username">6. Username OSINT Module</h1>
+<p><span class="badge badge-green">Discovery</span> <span class="badge badge-gray">File: modules/username_osint.php</span></p>
+
+<h3>Purpose</h3>
+<p>Checks whether a username exists across 28 social media and developer platforms simultaneously using parallel HTTP requests (cURL multi). For name searches, it generates 5 username variants and checks all of them.</p>
+
+<h3>28 Platforms Checked</h3>
+<table>
+<tr><td>Instagram</td><td>TikTok</td><td>Twitter/X</td><td>Facebook</td><td>YouTube</td><td>LinkedIn</td><td>Snapchat</td></tr>
+<tr><td>Threads</td><td>Pinterest</td><td>Twitch</td><td>Imgur</td><td>Reddit</td><td>GitHub</td><td>Spotify</td></tr>
+<tr><td>Vimeo</td><td>Telegram</td><td>Linktree</td><td>GitLab</td><td>Keybase</td><td>HackerNews</td><td>Patreon</td></tr>
+<tr><td>About.me</td><td>Flickr</td><td>Medium</td><td>DEV.to</td><td>Mastodon</td><td>Gravatar</td><td>Kaggle</td></tr>
+</table>
+
+<h3>Name Search: Username Variant Generation</h3>
+<p>When searching by name (e.g., "Bella Rolland"), 5 username variants are generated and checked:</p>
+<table>
+<tr><th>Variant</th><th>Example</th></tr>
+<tr><td>Concatenated</td><td><code>bellarolland</code></td></tr>
+<tr><td>Underscore-separated</td><td><code>bella_rolland</code></td></tr>
+<tr><td>Dot-separated</td><td><code>bella.rolland</code></td></tr>
+<tr><td>Initial + Last</td><td><code>brolland</code></td></tr>
+<tr><td>Reversed</td><td><code>rollandbella</code></td></tr>
+</table>
+
+<h3>Data Fields Returned</h3>
+<table>
+<tr><th>Field</th><th>Description</th><th>Example</th></tr>
+<tr><td>total_checked</td><td>Number of unique platforms checked</td><td>28</td></tr>
+<tr><td>total_found</td><td>Profiles found</td><td>18</td></tr>
+<tr><td>found_on</td><td>List of platforms with profiles</td><td>["instagram", "tiktok", "github", ...]</td></tr>
+<tr><td>searched_variants</td><td>Username variants tried (name search)</td><td>["johndoe", "john_doe", "john.doe", ...]</td></tr>
+<tr><td>profiles[].platform</td><td>Platform name</td><td>Instagram</td></tr>
+<tr><td>profiles[].url</td><td>Profile URL</td><td>https://www.instagram.com/johndoe/</td></tr>
+<tr><td>profiles[].exists</td><td>Whether the profile was found</td><td>true/false</td></tr>
+<tr><td>profiles[].web_verified</td><td>Confirmed via Google results</td><td>true (if found by SerpAPI)</td></tr>
+</table>
+
+<div class="example-box">
+<div class="example-label">Example Output &mdash; Name: "Mark Isidore Nicholas Alexander"</div>
+<p><strong>18/27 platforms found</strong></p>
+<p>Usernames checked: <code>markisidorenicholasalexander</code>, <code>mark_isidore_nicholas_alexander</code>, <code>mark.isidore.nicholas.alexander</code>, <code>markalexander</code>, <code>mark_alexander</code></p>
+<p>
+Instagram &mdash; <span class="badge badge-green">Web Verified</span> https://www.instagram.com/beastboy_m.i.n.a/<br>
+LinkedIn &mdash; <span class="badge badge-green">Web Verified</span> https://in.linkedin.com/in/markisidore<br>
+YouTube &mdash; <span class="badge badge-green">Web Verified</span> https://www.youtube.com/channel/...<br>
+TikTok &mdash; https://www.tiktok.com/@markisidorenicholasalexander<br>
+GitHub &mdash; https://github.com/markalexander<br>
+Reddit &mdash; https://www.reddit.com/user/markalexander<br>
+<em>...and 12 more platforms</em>
+</p>
+<p><strong>Note:</strong> Web Verified profiles (found via Google) are more reliable than username-guessed profiles and are sorted to the top.</p>
+</div>
+
+<h3>Trigger Conditions</h3>
+<p>Activated for <strong>username</strong> and <strong>name</strong> query types.</p>
+
+<!-- MODULE 6: WHOIS -->
+<div class="page-break"></div>
+<h1 id="whois">7. WHOIS Module</h1>
+<p><span class="badge badge-yellow">Domain Intel</span> <span class="badge badge-gray">File: modules/whois.php</span></p>
+
+<h3>Purpose</h3>
+<p>Performs direct socket-based WHOIS lookups against 80+ TLD-specific WHOIS servers with IANA fallback. Reveals domain registration details, ownership, and age.</p>
+
+<h3>What It Discovers</h3>
+<ul>
+<li>Registrar name and URL</li>
+<li>Registration, update, and expiry dates</li>
+<li>Domain age in days</li>
+<li>Registrant organization and country</li>
+<li>Nameservers</li>
+<li>WHOIS privacy protection detection</li>
+<li>Domain status codes (clientTransferProhibited, etc.)</li>
+</ul>
+
+<h3>Data Fields Returned</h3>
+<table>
+<tr><th>Field</th><th>Description</th><th>Example</th></tr>
+<tr><td>registrar</td><td>Registrar name</td><td>GoDaddy.com, LLC</td></tr>
+<tr><td>created_date</td><td>Domain registration date</td><td>2005-01-15</td></tr>
+<tr><td>updated_date</td><td>Last updated</td><td>2024-11-20</td></tr>
+<tr><td>expiry_date</td><td>Expiration date</td><td>2026-01-15</td></tr>
+<tr><td>domain_age_days</td><td>Age in days</td><td>7,714</td></tr>
+<tr><td>registrant_org</td><td>Organization name</td><td>Example Corp</td></tr>
+<tr><td>registrant_country</td><td>Country</td><td>US</td></tr>
+<tr><td>nameservers</td><td>DNS nameservers</td><td>["ns1.cloudflare.com", "ns2.cloudflare.com"]</td></tr>
+<tr><td>privacy_protected</td><td>WHOIS privacy active</td><td>true/false</td></tr>
+<tr><td>status</td><td>Domain status codes</td><td>["clientTransferProhibited"]</td></tr>
+</table>
+
+<div class="example-box">
+<div class="example-label">Example Output &mdash; Domain: evenforce.com</div>
+<p>Registrar: GoDaddy.com, LLC<br>
+Created: 2019-08-10 | Updated: 2024-06-15 | Expires: 2025-08-10<br>
+Domain Age: 2,058 days<br>
+Organization: Evenforce Technologies Pvt Ltd<br>
+Country: IN (India)<br>
+Nameservers: ns1.dns-parking.com, ns2.dns-parking.com<br>
+Privacy: Not active<br>
+Status: clientTransferProhibited</p>
+</div>
+
+<h3>Risk Factors</h3>
+<table>
+<tr><th>Condition</th><th>Risk Points</th></tr>
+<tr><td>Domain &lt; 30 days old</td><td>+25</td></tr>
+<tr><td>Domain &lt; 6 months old</td><td>+10</td></tr>
+<tr><td>Domain &lt; 1 year old</td><td>+5</td></tr>
+<tr><td>Privacy protection enabled</td><td>+5</td></tr>
+<tr><td>Expires within 90 days</td><td>+10</td></tr>
+</table>
+
+<h3>Trigger Conditions</h3>
+<p>Activated for <strong>domain</strong> query type only. No API key required &mdash; uses direct socket connections to WHOIS servers on port 43.</p>
+
+<!-- MODULE 7: DNS -->
+<div class="page-break"></div>
+<h1 id="dns">8. DNS Module</h1>
+<p><span class="badge badge-yellow">Domain Intel</span> <span class="badge badge-gray">File: modules/dns.php</span></p>
+
+<h3>Purpose</h3>
+<p>Fetches DNS records and analyzes email security configuration. Detects mail providers, hosting/CDN providers, and computes an email security score based on SPF, DKIM, and DMARC configuration.</p>
+
+<h3>What It Discovers</h3>
+<ul>
+<li>A, AAAA, MX, TXT, NS, SOA, CNAME records</li>
+<li>Mail provider detection (Google Workspace, Microsoft 365, custom mail, etc.)</li>
+<li>Hosting/CDN detection (Cloudflare, AWS, Azure, etc.)</li>
+<li>SPF record analysis</li>
+<li>DKIM detection</li>
+<li>DMARC policy and enforcement level</li>
+<li>Email security score (0-100)</li>
+</ul>
+
+<div class="example-box">
+<div class="example-label">Example Output &mdash; Domain: evenforce.com</div>
+<p><strong>A Records:</strong> 192.168.1.1<br>
+<strong>MX Records:</strong> aspmx.l.google.com (priority 1), alt1.aspmx.l.google.com (priority 5)<br>
+<strong>Mail Provider:</strong> Google Workspace<br>
+<strong>NS Records:</strong> ns1.cloudflare.com, ns2.cloudflare.com<br>
+<strong>CDN/Hosting:</strong> Cloudflare</p>
+<p><strong>Email Security:</strong><br>
+SPF: <span class="badge badge-green">Present</span> &mdash; v=spf1 include:_spf.google.com ~all<br>
+DKIM: <span class="badge badge-green">Detected</span><br>
+DMARC: <span class="badge badge-green">Enforced</span> &mdash; v=DMARC1; p=quarantine<br>
+<strong>Email Security Score: 90/100</strong></p>
+</div>
+
+<h3>Trigger Conditions</h3>
+<p>Activated for <strong>domain</strong> query type only. Uses PHP's built-in <code>dns_get_record()</code> &mdash; no API key required.</p>
+
+<!-- MODULE 8: SSL -->
+<div class="page-break"></div>
+<h1 id="ssl">9. SSL Module</h1>
+<p><span class="badge badge-yellow">Domain Intel</span> <span class="badge badge-gray">File: modules/ssl.php</span></p>
+
+<h3>Purpose</h3>
+<p>Inspects the TLS/SSL certificate of a domain by opening a direct socket connection. Analyzes certificate authority, type, expiry, key strength, and subject alternative names.</p>
+
+<h3>What It Discovers</h3>
+<ul>
+<li>Certificate type: DV (Domain Validated), OV (Organization Validated), EV (Extended Validation)</li>
+<li>Issuing Certificate Authority</li>
+<li>Subject Common Name and Organization</li>
+<li>Valid from/to dates</li>
+<li>Key type (RSA or EC) and key size</li>
+<li>Subject Alternative Names (SAN) &mdash; all domains covered by the cert</li>
+<li>Certificate chain visualization</li>
+</ul>
+
+<div class="example-box">
+<div class="example-label">Example Output &mdash; Domain: github.com</div>
+<p>Type: <span class="badge badge-green">OV (Organization Validated)</span><br>
+Issuer: DigiCert Inc<br>
+Subject: github.com (GitHub, Inc.)<br>
+Valid: 2024-03-01 to 2025-03-01<br>
+Key: EC 256 bits (strong)<br>
+SANs: github.com, www.github.com<br>
+Chain: github.com &rarr; DigiCert Global G2 &rarr; DigiCert Global Root G2</p>
+</div>
+
+<h3>Risk Factors</h3>
+<table>
+<tr><th>Condition</th><th>Risk Points</th></tr>
+<tr><td>Certificate expired</td><td>+20</td></tr>
+<tr><td>Expires within 30 days</td><td>+10</td></tr>
+<tr><td>Weak key (RSA &lt; 2048 bits or EC &lt; 224 bits)</td><td>+10</td></tr>
+</table>
+
+<h3>Trigger Conditions</h3>
+<p>Activated for <strong>domain</strong> query type only. Uses PHP's <code>stream_socket_client</code> &mdash; no API key required.</p>
+
+<!-- MODULE 9: VIRUSTOTAL -->
+<div class="page-break"></div>
+<h1 id="virustotal">10. VirusTotal Module</h1>
+<p><span class="badge badge-red">Security</span> <span class="badge badge-gray">File: modules/virustotal.php</span></p>
+
+<h3>Purpose</h3>
+<p>Checks domains and IP addresses against VirusTotal's database of 70+ security engines. Identifies malware, phishing, spam, and other threats.</p>
+
+<h3>What It Detects</h3>
+<ul>
+<li>How many security engines flag the target as malicious</li>
+<li>How many flag it as suspicious</li>
+<li>Specific engine verdicts (malware, phishing, spam, etc.)</li>
+<li>Reputation score</li>
+<li>Last analysis date</li>
+</ul>
+
+<div class="example-box">
+<div class="example-label">Example Output &mdash; Domain: suspicious-site.xyz</div>
+<p>Security Engines: 72 scanned<br>
+<span class="badge badge-red">8 Malicious</span> <span class="badge badge-yellow">3 Suspicious</span> 61 Clean<br>
+Flagged by: Kaspersky (malware), BitDefender (phishing), ESET (malware), Fortinet (malware), Sophos (phishing), ...<br>
+Reputation: -15<br>
+Last Analysis: 2026-03-28</p>
+<p><strong>Risk Impact:</strong> 8 malicious flags = <span class="risk-score" style="color:#ef4444;">+30 risk points</span></p>
+</div>
+
+<div class="example-box">
+<div class="example-label">Example Output &mdash; Domain: google.com</div>
+<p>Security Engines: 72 scanned<br>
+<span class="badge badge-green">0 Malicious</span> 0 Suspicious &mdash; 72 Clean<br>
+Reputation: 1150 (excellent)<br>
+Last Analysis: 2026-03-29</p>
+</div>
+
+<h3>Trigger Conditions</h3>
+<p>Activated for <strong>domain</strong> and <strong>IP</strong> query types.</p>
+
+<!-- MODULE 10: IPINFO -->
+<div class="page-break"></div>
+<h1 id="ipinfo">11. IPInfo Module</h1>
+<p><span class="badge badge-blue">Identity</span> <span class="badge badge-gray">File: modules/ipinfo.php</span></p>
+
+<h3>Purpose</h3>
+<p>Geolocates IP addresses and detects privacy services (VPN, proxy, Tor, hosting). For domain queries, the domain is first resolved to an IP via DNS.</p>
+
+<h3>What It Discovers</h3>
+<ul>
+<li>City, region, country, and GPS coordinates</li>
+<li>ISP/organization name</li>
+<li>AS number and name</li>
+<li>Whether the IP is a VPN, proxy, Tor exit node, or hosting/datacenter IP</li>
+<li>Timezone</li>
+</ul>
+
+<div class="example-box">
+<div class="example-label">Example Output &mdash; IP: 104.26.10.78</div>
+<p>Location: San Francisco, California, US<br>
+Coordinates: 37.7749, -122.4194<br>
+ISP: Cloudflare, Inc.<br>
+AS: AS13335 (Cloudflare)<br>
+Privacy: <span class="badge badge-yellow">Hosting/Datacenter IP</span><br>
+VPN: No | Proxy: No | Tor: No</p>
+</div>
+
+<h3>Trigger Conditions</h3>
+<p>Activated for <strong>IP</strong> and <strong>domain</strong> query types. For domains, the IP is resolved first via <code>gethostbyname()</code>.</p>
+
+<!-- MODULE 11: PHONE -->
+<div class="page-break"></div>
+<h1 id="phone">12. Phone Info Module</h1>
+<p><span class="badge badge-blue">Identity</span> <span class="badge badge-gray">File: modules/phone_info.php</span></p>
+
+<h3>Purpose</h3>
+<p>Validates phone numbers, detects the country from 80+ international dialing prefixes, and classifies the line type. Runs entirely locally with no external API calls.</p>
+
+<h3>What It Discovers</h3>
+<ul>
+<li>Whether the phone number format is valid</li>
+<li>Country of origin (from dialing prefix)</li>
+<li>Country code and national number</li>
+<li>Line type: mobile, landline, toll-free, or unknown</li>
+<li>Total digit count</li>
+</ul>
+
+<div class="example-box">
+<div class="example-label">Example Output &mdash; Phone: +91-9876543210</div>
+<p>Valid: Yes<br>
+Country: India (+91)<br>
+National Number: 9876543210<br>
+Type: Mobile<br>
+Digits: 12</p>
+</div>
+
+<div class="example-box">
+<div class="example-label">Example Output &mdash; Phone: +1-800-555-0199</div>
+<p>Valid: Yes<br>
+Country: United States (+1)<br>
+National Number: 8005550199<br>
+Type: Toll-free<br>
+Digits: 11</p>
+</div>
+
+<h3>Trigger Conditions</h3>
+<p>Activated for <strong>phone</strong> query type only. No API key required &mdash; uses built-in prefix table.</p>
+
+<!-- MODULE 12: GEMINI AI -->
+<div class="page-break"></div>
+<h1 id="gemini">13. Gemini AI Module</h1>
+<p><span class="badge badge-blue">AI</span> <span class="badge badge-gray">File: modules/gemini.php</span></p>
+
+<h3>Purpose</h3>
+<p>Generates an AI-powered intelligence briefing from all gathered data using Google's Gemini (gemini-2.5-flash) model. The briefing reads like a professional intelligence analyst's summary.</p>
+
+<h3>What It Produces</h3>
+<ul>
+<li>Executive summary of the target's digital presence</li>
+<li>Key findings and notable data points highlighted</li>
+<li>Risk factors explained in plain language</li>
+<li>Connections and patterns identified across data sources</li>
+<li>Recommendations or areas of concern</li>
+</ul>
+
+<div class="example-box">
+<div class="example-label">Example AI Briefing &mdash; Email: developer@company.com</div>
+<p><strong>AI Intelligence Briefing</strong></p>
+<p>The target email is associated with a senior software developer based in Bengaluru, India. The individual maintains an active professional presence across multiple platforms.</p>
+<p><strong>Key Findings:</strong></p>
+<ul>
+<li>GitHub profile shows 42 public repositories with focus on PHP and JavaScript development</li>
+<li>Active on 18 of 28 social platforms checked, with verified Instagram and LinkedIn profiles</li>
+<li>Email was exposed in 2 data breaches (LinkedIn 2012, Adobe 2013) &mdash; both included passwords</li>
+<li>No malicious indicators found for associated domains</li>
+</ul>
+<p><strong>Risk Assessment:</strong> Moderate (45/100). Primary concern is the password exposure in two major breaches. Recommend verifying that credentials have been updated.</p>
+</div>
+
+<h3>Trigger Conditions</h3>
+<p>Runs automatically after all other modules complete. Receives the full aggregated profile as context. Activated for all query types.</p>
+
+<!-- RISK SCORING -->
+<div class="page-break"></div>
+<h1 id="risk">14. Risk Scoring Engine</h1>
+
+<h3>How Risk Scores Are Calculated</h3>
+<p>Every profile receives an automated risk score from 0 to 100 based on security indicators discovered across all modules.</p>
+
+<h3>Person/Email Risk Factors</h3>
+<table>
+<tr><th>Factor</th><th>Points</th><th>Source</th></tr>
+<tr><td>Each data breach found</td><td>+10</td><td>HIBP</td></tr>
+<tr><td>Password exposed in breach</td><td>+20</td><td>HIBP</td></tr>
+<tr><td>Sensitive breach (adult/health)</td><td>+30</td><td>HIBP</td></tr>
+<tr><td>Stealer log (malware-harvested)</td><td>+25</td><td>HIBP</td></tr>
+</table>
+
+<h3>Domain/IP Risk Factors</h3>
+<table>
+<tr><th>Factor</th><th>Points</th><th>Source</th></tr>
+<tr><td>Domain &lt; 30 days old</td><td>+25</td><td>WHOIS</td></tr>
+<tr><td>Domain &lt; 6 months old</td><td>+10</td><td>WHOIS</td></tr>
+<tr><td>WHOIS privacy protection</td><td>+5</td><td>WHOIS</td></tr>
+<tr><td>Domain expires within 90 days</td><td>+10</td><td>WHOIS</td></tr>
+<tr><td>Expired SSL certificate</td><td>+20</td><td>SSL</td></tr>
+<tr><td>SSL expiring within 30 days</td><td>+10</td><td>SSL</td></tr>
+<tr><td>Weak SSL key</td><td>+10</td><td>SSL</td></tr>
+<tr><td>Missing SPF record</td><td>+10</td><td>DNS</td></tr>
+<tr><td>Missing DMARC policy</td><td>+5</td><td>DNS</td></tr>
+<tr><td>VirusTotal: 5+ malicious flags</td><td>+30</td><td>VirusTotal</td></tr>
+<tr><td>VirusTotal: 1-5 malicious flags</td><td>+15</td><td>VirusTotal</td></tr>
+<tr><td>VirusTotal: any suspicious flags</td><td>+10</td><td>VirusTotal</td></tr>
+<tr><td>VPN detected on IP</td><td>+10</td><td>IPInfo</td></tr>
+<tr><td>Tor exit node detected</td><td>+15</td><td>IPInfo</td></tr>
+<tr><td>Proxy detected</td><td>+10</td><td>IPInfo</td></tr>
+</table>
+
+<h3>Risk Levels</h3>
+<table>
+<tr><th>Score</th><th>Level</th><th>Color</th><th>Meaning</th></tr>
+<tr><td>0</td><td>Clean</td><td style="color:#22c55e;">Green</td><td>No risk indicators found</td></tr>
+<tr><td>1-20</td><td>Low</td><td style="color:#22c55e;">Green</td><td>Minor indicators, generally safe</td></tr>
+<tr><td>21-50</td><td>Moderate</td><td style="color:#f59e0b;">Yellow</td><td>Some concerns worth noting</td></tr>
+<tr><td>51-75</td><td>High</td><td style="color:#f97316;">Orange</td><td>Significant risk factors present</td></tr>
+<tr><td>76-100</td><td>Critical</td><td style="color:#ef4444;">Red</td><td>Severe security concerns</td></tr>
+</table>
+
+<!-- BULK SEARCH -->
+<div class="page-break"></div>
+<h1 id="bulk">15. Bulk Search</h1>
+
+<h3>Purpose</h3>
+<p>Search up to 10 targets simultaneously. The full intelligence pipeline runs on each query.</p>
+
+<h3>How It Works</h3>
+<ol>
+<li>Switch to "Bulk" mode on the search page</li>
+<li>Select a query type (all queries in the batch share the same type)</li>
+<li>Enter one query per line in the textarea (max 10)</li>
+<li>Click "Investigate All"</li>
+<li>View the summary card with aggregate stats and individual results</li>
+<li>Click "View Full" on any result to see the complete profile</li>
+</ol>
+
+<h3>Output</h3>
+<ul>
+<li>Total queries, success count, failure count</li>
+<li>Average risk score across all results</li>
+<li>Compact result cards: name/query, risk badge, source count, breach count</li>
+<li>Each result links to the full profile view via the replay system</li>
+</ul>
+
+<!-- ANALYTICS -->
+<h1 id="analytics">16. Dashboard Analytics</h1>
+
+<h3>Purpose</h3>
+<p>Visual overview of all intelligence work. Accessible via the "Analytics" tab on the dashboard.</p>
+
+<h3>Charts and Stats</h3>
+<table>
+<tr><th>Widget</th><th>What It Shows</th></tr>
+<tr><td>Stats Row</td><td>Total searches, average risk score, saved profiles count, active watchlist items</td></tr>
+<tr><td>Search by Type (pie chart)</td><td>Distribution of searches across email, username, name, IP, domain, phone</td></tr>
+<tr><td>Risk Distribution (stacked bar)</td><td>How many profiles fall into clean, low, moderate, high, critical risk categories</td></tr>
+<tr><td>Searches Over Time (bar chart)</td><td>Daily search volume over the last 30 days</td></tr>
+<tr><td>Top Platforms (bar chart)</td><td>Top 10 most frequently discovered social platforms from username OSINT</td></tr>
+</table>
+
+<!-- FOOTER -->
+<div class="page-break"></div>
+<div style="text-align:center; margin-top:200px; color:#9ca3af;">
+<p style="font-size:24pt; color:#0891b2; font-weight:700; letter-spacing:2px;">VIGNETTE</p>
+<p style="font-size:10pt; letter-spacing:4px;">AI-POWERED DIGITAL INTELLIGENCE</p>
+<div style="width:60px; height:2px; background:#0891b2; margin:20px auto;"></div>
+<p style="font-size:9pt;">Version 2.0 &mdash; Phase 5<br>
+100% Legal OSINT &mdash; Only public APIs and publicly available data<br>
+March 2026</p>
+</div>
+
+</body>
+</html>
